@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
 
 /**
  *
@@ -15,4 +16,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface NewsRepository extends ReactiveMongoRepository<News, String> {
 
+    Flux<News> findTop10ByOrderByIdDesc();
 }

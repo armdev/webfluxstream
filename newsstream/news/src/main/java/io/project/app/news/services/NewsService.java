@@ -30,7 +30,7 @@ public class NewsService {
     }
 
     public Flux<News> findAll() {
-        return newsRepository.findAll();
+        return newsRepository.findTop10ByOrderByIdDesc();
 
     }
 
